@@ -10,6 +10,7 @@ import {
     faFolder,
     faHistory,
     faHome,
+    faGlobe,
     faLayerGroup,
     faNetworkWired,
     faPlay,
@@ -30,6 +31,8 @@ import Avatar from '@/components/Avatar';
 import routes from '@/routers/routes';
 import Can from '@/components/elements/Can';
 
+const SHISURE_HOME_URL = 'https://shisure.com';
+
 const icons = {
     Console: faTerminal,
     Files: faFolder,
@@ -44,7 +47,7 @@ const icons = {
 };
 
 const Brand = () => (
-    <Link to={'/'} className={'flex items-center gap-3 px-5 h-[72px] no-underline border-b border-white/5'}>
+    <a href={SHISURE_HOME_URL} className={'flex items-center gap-3 px-5 h-[72px] no-underline border-b border-white/5'}>
         <span
             className={
                 'flex items-center justify-center w-9 h-9 rounded-lg bg-shisure-500 text-[#061005] font-bold text-sm'
@@ -56,7 +59,7 @@ const Brand = () => (
             SHISURE
             <small className={'block text-[10px] tracking-[0.32em] text-gray-400 font-medium mt-0.5'}>NODES</small>
         </span>
-    </Link>
+    </a>
 );
 
 const ServerNavigation = () => {
@@ -68,6 +71,15 @@ const ServerNavigation = () => {
 
     return (
         <>
+            <p className={'px-5 pt-6 pb-2 text-[10px] uppercase tracking-[0.18em] text-gray-500'}>Workspace</p>
+            <NavLink to={'/'} exact className={'shisure-nav-item'}>
+                <FontAwesomeIcon icon={faLayerGroup} fixedWidth />
+                <span>Servers</span>
+            </NavLink>
+            <a href={SHISURE_HOME_URL} className={'shisure-nav-item'}>
+                <FontAwesomeIcon icon={faGlobe} fixedWidth />
+                <span>Shisure website</span>
+            </a>
             <p className={'px-5 pt-6 pb-2 text-[10px] uppercase tracking-[0.18em] text-gray-500'}>Server management</p>
             {routes.server
                 .filter((route) => !!route.name)
@@ -108,6 +120,10 @@ const DashboardNavigation = () => {
                 <FontAwesomeIcon icon={faUserCircle} fixedWidth />
                 <span>Account</span>
             </NavLink>
+            <a href={SHISURE_HOME_URL} className={'shisure-nav-item'}>
+                <FontAwesomeIcon icon={faGlobe} fixedWidth />
+                <span>Shisure website</span>
+            </a>
             {rootAdmin && (
                 <a href={'/admin'} className={'shisure-nav-item'}>
                     <FontAwesomeIcon icon={faCogs} fixedWidth />

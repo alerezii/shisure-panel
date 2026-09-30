@@ -21,11 +21,13 @@ const Container = styled.div`
 export default forwardRef<HTMLFormElement, Props>(({ title, ...props }, ref) => (
     <Container>
         <div css={tw`flex flex-col items-center mb-8`}>
-            <span
-                css={tw`flex items-center justify-center w-12 h-12 rounded-lg bg-primary-500 text-neutral-900 font-bold mb-4`}
+            <a
+                href={'https://shisure.com'}
+                aria-label={'Go to Shisure Nodes website'}
+                css={tw`flex items-center justify-center w-12 h-12 rounded-lg bg-primary-500 text-neutral-900 font-bold mb-4 no-underline`}
             >
                 SN
-            </span>
+            </a>
             <p css={tw`text-sm font-semibold tracking-[0.18em] text-neutral-50`}>SHISURE NODES</p>
             {title && <h2 css={tw`text-2xl text-center text-neutral-100 font-semibold mt-6`}>{title}</h2>}
             <p css={tw`text-sm text-neutral-400 mt-2`}>Enter your credentials to access your infrastructure.</p>
