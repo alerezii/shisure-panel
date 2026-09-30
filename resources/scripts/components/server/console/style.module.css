@@ -1,0 +1,87 @@
+.stat_block {
+    @apply flex items-center relative;
+    @apply col-span-3 md:col-span-2 lg:col-span-6;
+    @apply px-3 py-3;
+    min-height: 68px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #0d110f;
+
+    & > .status_bar {
+        @apply w-1 h-full absolute left-0 top-0 rounded-l sm:hidden;
+    }
+
+    & > .icon {
+        @apply hidden flex-shrink-0 items-center justify-center rounded-lg w-10 h-10;
+        @apply transition-colors duration-500;
+        @apply sm:flex sm:mr-4;
+
+        & > svg {
+            @apply w-6 h-6 m-auto;
+        }
+    }
+}
+
+.terminal {
+    @apply flex flex-col w-full;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #080d0f;
+
+    & .overflows_container {
+        @apply ml-0;
+        width: 100%;
+
+        @screen sm {
+            @apply w-full;
+        }
+    }
+
+    & > .container {
+        @apply p-2 sm:p-3 min-h-[28rem] flex-1 font-mono text-sm;
+        background: #080d0f;
+
+        & #terminal {
+            @apply h-full;
+
+            &::-webkit-scrollbar-track {
+                @apply w-2;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                @apply bg-gray-900;
+            }
+        }
+    }
+
+    & .command_icon {
+        @apply flex items-center top-0 left-0 absolute z-10 select-none h-full px-3 transition-colors duration-100;
+    }
+
+    & .command_input {
+        @apply relative px-2 text-gray-100 pl-10 pr-24 py-3 w-full font-mono text-sm;
+        background: #0d110f;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        @apply focus:ring-0 outline-none focus-visible:outline-none;
+        @apply border-0 border-b-2 border-transparent transition-colors duration-100;
+        @apply active:border-shisure-500 focus:border-shisure-500;
+    }
+
+    & .command_button {
+        @apply absolute right-2 top-1/2 -translate-y-1/2 px-4 h-8 rounded-md text-xs font-semibold disabled:opacity-50;
+        color: #061005;
+        background: #65ff35;
+
+        &:hover:not(:disabled) {
+            background: #78ff4d;
+        }
+    }
+}
+
+.chart_container {
+    @apply pt-2 relative overflow-hidden;
+    background: #0d110f;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+}

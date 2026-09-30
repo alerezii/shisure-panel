@@ -1,0 +1,90 @@
+:root {
+    --sh-background: #070908;
+    --sh-sidebar: #080b09;
+    --sh-surface: #0d110f;
+    --sh-raised: #151a16;
+    --sh-border: rgba(255, 255, 255, .07);
+    --sh-text: #f5f7f5;
+    --sh-muted: #9ca39e;
+    --sh-green: #65ff35;
+}
+
+.shisure-admin,
+.shisure-admin .content-wrapper,
+.shisure-admin .right-side,
+.shisure-admin .main-footer {
+    background: var(--sh-background);
+    color: var(--sh-muted);
+}
+
+.shisure-admin .main-header .logo,
+.shisure-admin .main-header .navbar,
+.shisure-admin .main-sidebar,
+.shisure-admin .left-side {
+    background: var(--sh-sidebar);
+}
+
+.shisure-admin .main-header .logo {
+    height: 64px;
+    line-height: 64px;
+    border-right: 1px solid var(--sh-border);
+    color: var(--sh-text);
+    letter-spacing: .12em;
+}
+
+.shisure-admin .main-header .logo b { color: var(--sh-green); }
+.shisure-admin .main-header .navbar { min-height: 64px; border-bottom: 1px solid var(--sh-border); }
+.shisure-admin .main-header .sidebar-toggle { padding: 22px 18px; }
+.shisure-admin .main-header .navbar .nav > li > a { padding-top: 22px; padding-bottom: 22px; color: var(--sh-muted); }
+.shisure-admin .main-header .navbar .nav > li > a:hover,
+.shisure-admin .main-header .navbar .sidebar-toggle:hover { background: var(--sh-raised); color: var(--sh-green); }
+.shisure-admin .main-sidebar { padding-top: 64px; border-right: 1px solid var(--sh-border); }
+.shisure-admin .sidebar-menu > li.header { background: transparent; color: #626963; font-size: 10px; letter-spacing: .16em; padding: 22px 18px 8px; }
+.shisure-admin .sidebar-menu > li > a { margin: 2px 10px; padding: 11px 12px; border-radius: 8px; color: var(--sh-muted); border-left: 0; }
+.shisure-admin .sidebar-menu > li:hover > a { background: #121713; color: var(--sh-text); }
+.shisure-admin .sidebar-menu > li.active > a { background: rgba(101,255,53,.1); color: var(--sh-green); border-left: 2px solid var(--sh-green); }
+.shisure-admin .content-header { padding: 24px 28px 8px; }
+.shisure-admin .content-header > h1 { color: var(--sh-text); font-weight: 600; font-size: 26px; }
+.shisure-admin .content { padding: 18px 28px 28px; }
+.shisure-admin .box,
+.shisure-admin .info-box,
+.shisure-admin .small-box,
+.shisure-admin .nav-tabs-custom {
+    background: var(--sh-surface);
+    border: 1px solid var(--sh-border);
+    border-radius: 10px;
+    box-shadow: none;
+    color: var(--sh-muted);
+}
+.shisure-admin .box-header,
+.shisure-admin .box-footer,
+.shisure-admin .nav-tabs-custom > .nav-tabs { background: transparent; border-color: var(--sh-border); }
+.shisure-admin .box-title,
+.shisure-admin label,
+.shisure-admin legend,
+.shisure-admin h1, .shisure-admin h2, .shisure-admin h3, .shisure-admin h4 { color: var(--sh-text); }
+.shisure-admin .table > thead > tr > th,
+.shisure-admin .table > tbody > tr > td { border-color: var(--sh-border); }
+.shisure-admin .table-striped > tbody > tr:nth-of-type(odd) { background: rgba(255,255,255,.015); }
+.shisure-admin .table-hover > tbody > tr:hover { background: #121713; }
+.shisure-admin .form-control,
+.shisure-admin .select2-container--default .select2-selection--single,
+.shisure-admin textarea {
+    background: #0b0e0c;
+    color: var(--sh-text);
+    border: 1px solid var(--sh-border);
+    border-radius: 8px;
+}
+.shisure-admin .form-control:focus { border-color: rgba(101,255,53,.4); box-shadow: 0 0 0 2px rgba(101,255,53,.08); }
+.shisure-admin .btn-primary,
+.shisure-admin .btn-success { background: var(--sh-green); border-color: var(--sh-green); color: #061005; border-radius: 8px; font-weight: 600; }
+.shisure-admin .btn-primary:hover,
+.shisure-admin .btn-success:hover { background: #78ff4d; border-color: #78ff4d; color: #061005; }
+.shisure-admin .btn-default { background: var(--sh-raised); border-color: var(--sh-border); color: var(--sh-text); border-radius: 8px; }
+.shisure-admin a { color: var(--sh-green); }
+.shisure-admin .main-footer { border-top: 1px solid var(--sh-border); }
+
+@media (max-width: 767px) {
+    .shisure-admin .content { padding: 14px; }
+    .shisure-admin .content-header { padding: 18px 14px 6px; }
+}
