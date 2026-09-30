@@ -12,6 +12,7 @@ import tw from 'twin.macro';
 import Fade from '@/components/elements/Fade';
 import ServerContentBlock from '@/components/elements/ServerContentBlock';
 import { useDeepMemoize } from '@/plugins/useDeepMemoize';
+import { LinkButton } from '@/components/elements/Button';
 
 export default () => {
     const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
@@ -39,6 +40,11 @@ export default () => {
     return (
         <ServerContentBlock title={'Databases'}>
             <FlashMessageRender byKey={'databases'} css={tw`mb-4`} />
+            <div css={tw`mb-4 flex justify-end`}>
+                <LinkButton href={'https://db.shisure.com'} target={'_blank'} rel={'noopener noreferrer'} isSecondary>
+                    Abrir phpMyAdmin
+                </LinkButton>
+            </div>
             {!databases.length && loading ? (
                 <Spinner size={'large'} centered />
             ) : (
